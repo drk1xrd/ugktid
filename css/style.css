@@ -650,132 +650,123 @@ img { max-width: 100%; height: auto; display: block; object-fit: cover; }
 
 
 /* =========================================
-   ВТОРОЙ УРОВЕНЬ МЕНЮ (DROPDOWN)
+   ВЫПАДАЮЩЕЕ МЕНЮ (DROPDOWN) - ПОЛНЫЙ КОД
    ========================================= */
 
-/* Родительский пункт */
+/* --- Базовые стили (Стрелка) --- */
 .has-submenu {
-    position: relative; /* Чтобы подменю позиционировалось относительно него */
+    position: relative;
     display: flex;
-    align-items: center;
-    height: 100%;
+    flex-direction: column; /* Важно для мобилки */
+    justify-content: center;
 }
 
-/* Стрелочка */
 .arrow-down {
     font-size: 0.7rem;
     margin-left: 6px;
     transition: transform 0.3s ease;
     display: inline-block;
-    color: var(--clr-accent);
+    color: var(--clr-secondary); /* Оранжевая стрелка */
 }
 
-/* Поворот стрелки при наведении */
-.has-submenu:hover .arrow-down {
-    transform: rotate(180deg);
-}
+/* --- DESTOP ВЕРСИЯ (HOVER) --- */
+@media (min-width: 901px) {
+    .has-submenu {
+        flex-direction: row; /* На ПК в строку */
+        height: 100%;
+        align-items: center;
+    }
 
-/* Само выпадающее меню (Скрыто по умолчанию) */
-.submenu {
-    position: absolute;
-    top: 100%; /* Сразу под родителем */
-    left: 0;
-    min-width: 220px;
-    background-color: var(--bg-surface);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    border-radius: 12px;
-    padding: 10px 0;
+    /* Скрываем подменю по умолчанию */
+    .submenu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 220px;
+        background-color: var(--bg-surface);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        border-radius: 12px;
+        padding: 10px 0;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(15px);
+        transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        z-index: 1100;
+        border: 1px solid #f1f5f9;
+        flex-direction: column;
+    }
+
+    /* Показываем при наведении */
+    .has-submenu:hover .submenu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
     
-    /* Анимация появления */
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(15px);
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    .has-submenu:hover .arrow-down {
+        transform: rotate(180deg);
+    }
+
+    /* Оранжевая полоска (только для верхнего уровня) */
+    .nav-list > li > a { position: relative; }
+    .nav-list > li > a::after {
+        content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px;
+        background-color: var(--clr-secondary); transition: width 0.3s ease;
+    }
+    .nav-list > li > a:hover::after { width: 100%; }
     
-    z-index: 1100;
-    display: flex;
-    flex-direction: column; /* Пункты вертикально */
-    border: 1px solid #f1f5f9;
+    /* Ссылки внутри подменю */
+    .submenu li a {
+        display: block; padding: 10px 20px; font-size: 0.9rem; color: var(--clr-text-main); font-weight: 500;
+    }
+    .submenu li a:hover {
+        background: #f8fafc; color: var(--clr-accent); padding-left: 25px;
+    }
+    .submenu li a::after { display: none !important; } /* Убираем полоску у подменю */
 }
 
-/* Показываем меню при наведении на родителя */
-.has-submenu:hover .submenu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-
-/* Ссылки внутри подменю */
-.submenu li a {
-    display: block;
-    padding: 12px 20px;
-    font-size: 0.9rem;
-    color: var(--clr-text-main);
-    font-family: var(--font-body); /* Шрифт текста, не заголовка */
-    font-weight: 500;
-    white-space: nowrap; /* Текст в одну строку */
-    transition: 0.2s;
-}
-
-/* Убираем нижнюю полоску (underline) у ссылок подменю, которая была в общем стиле */
-.submenu li a::after {
-    display: none;
-}
-
-/* Ховер эффект для пунктов подменю */
-.submenu li a:hover {
-    background-color: #f8fafc;
-    color: var(--clr-accent);
-    padding-left: 25px; /* Небольшой сдвиг вправо */
-}
-
-/* --- АДАПТИВ ПОДМЕНЮ ДЛЯ МОБИЛЬНЫХ --- */
+/* --- MOBILE ВЕРСИЯ (CLICK) --- */
 @media (max-width: 900px) {
     .has-submenu {
-        flex-direction: column;
-        height: auto;
         width: 100%;
+        align-items: center;
     }
 
     .submenu {
-        position: static; /* Возвращаем в поток документа */
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        box-shadow: none;
-        border: none;
-        background: transparent;
+        display: none; /* Скрыто по умолчанию */
         width: 100%;
-        padding: 0;
-        margin-top: 10px;
-        margin-bottom: 10px;
-        display: none; /* Скрываем, пока не нажмут (или делаем всегда открытым) */
-        
-        /* В данном дизайне лучше сделать его всегда открытым или выделенным цветом */
-        display: flex; 
-        background-color: rgba(59, 130, 246, 0.05); /* Легкий фон */
+        background-color: #f8fafc;
         border-radius: 8px;
+        margin-top: 10px;
+        padding: 5px 0;
+        border: 1px solid #e2e8f0;
+    }
+
+    /* Класс .open добавляется через JS при клике */
+    .has-submenu.open .submenu {
+        display: block; /* Показываем */
+        animation: slideDown 0.3s ease;
+    }
+
+    .has-submenu.open .arrow-down {
+        transform: rotate(180deg);
     }
 
     .submenu li a {
-        padding: 15px;
+        padding: 12px;
         text-align: center;
-        font-size: 1rem;
+        font-size: 0.95rem;
         color: var(--clr-text-light);
+        border-bottom: 1px solid rgba(0,0,0,0.03);
     }
     
-    .submenu li a:hover {
-        padding-left: 15px; /* Убираем эффект сдвига на мобильном */
-        color: var(--clr-accent);
-        background: transparent;
-    }
+    .submenu li a:hover { color: var(--clr-accent); }
     
-    .arrow-down {
-        display: none; /* Скрываем стрелку на мобильном, чтобы не мешала */
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 }
-
-
 
 
 

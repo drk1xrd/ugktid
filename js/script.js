@@ -81,6 +81,24 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- ВЫПАДАЮЩЕЕ МЕНЮ НА МОБИЛЬНОМ (ACCORDION) ---
+    const dropdownToggles = document.querySelectorAll('.dropdown-toggle');
+
+    dropdownToggles.forEach(toggle => {
+        toggle.addEventListener('click', (e) => {
+            // Проверяем, что это мобильное устройство (ширина меньше 900px)
+            if (window.innerWidth <= 900) {
+                e.preventDefault(); // Отменяем переход по ссылке (index.html)
+                
+                // Находим родительский элемент li
+                const parent = toggle.parentElement;
+                
+                // Переключаем класс .open
+                parent.classList.toggle('open');
+            }
+        });
+    });
+
     // --- 5. СЛАЙДЕР НОВОСТЕЙ ---
     const sliderTrack = document.querySelector('.news-slider-track');
     const prevBtn = document.querySelector('.prev-btn');
