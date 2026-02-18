@@ -647,3 +647,167 @@ img { max-width: 100%; height: auto; display: block; object-fit: cover; }
         text-align: center;
     }
 }
+
+
+/* =========================================
+   ВТОРОЙ УРОВЕНЬ МЕНЮ (DROPDOWN)
+   ========================================= */
+
+/* Родительский пункт */
+.has-submenu {
+    position: relative; /* Чтобы подменю позиционировалось относительно него */
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+/* Стрелочка */
+.arrow-down {
+    font-size: 0.7rem;
+    margin-left: 6px;
+    transition: transform 0.3s ease;
+    display: inline-block;
+    color: var(--clr-accent);
+}
+
+/* Поворот стрелки при наведении */
+.has-submenu:hover .arrow-down {
+    transform: rotate(180deg);
+}
+
+/* Само выпадающее меню (Скрыто по умолчанию) */
+.submenu {
+    position: absolute;
+    top: 100%; /* Сразу под родителем */
+    left: 0;
+    min-width: 220px;
+    background-color: var(--bg-surface);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 12px;
+    padding: 10px 0;
+    
+    /* Анимация появления */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    
+    z-index: 1100;
+    display: flex;
+    flex-direction: column; /* Пункты вертикально */
+    border: 1px solid #f1f5f9;
+}
+
+/* Показываем меню при наведении на родителя */
+.has-submenu:hover .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Ссылки внутри подменю */
+.submenu li a {
+    display: block;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    color: var(--clr-text-main);
+    font-family: var(--font-body); /* Шрифт текста, не заголовка */
+    font-weight: 500;
+    white-space: nowrap; /* Текст в одну строку */
+    transition: 0.2s;
+}
+
+/* Убираем нижнюю полоску (underline) у ссылок подменю, которая была в общем стиле */
+.submenu li a::after {
+    display: none;
+}
+
+/* Ховер эффект для пунктов подменю */
+.submenu li a:hover {
+    background-color: #f8fafc;
+    color: var(--clr-accent);
+    padding-left: 25px; /* Небольшой сдвиг вправо */
+}
+
+/* --- АДАПТИВ ПОДМЕНЮ ДЛЯ МОБИЛЬНЫХ --- */
+@media (max-width: 900px) {
+    .has-submenu {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+
+    .submenu {
+        position: static; /* Возвращаем в поток документа */
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        background: transparent;
+        width: 100%;
+        padding: 0;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: none; /* Скрываем, пока не нажмут (или делаем всегда открытым) */
+        
+        /* В данном дизайне лучше сделать его всегда открытым или выделенным цветом */
+        display: flex; 
+        background-color: rgba(59, 130, 246, 0.05); /* Легкий фон */
+        border-radius: 8px;
+    }
+
+    .submenu li a {
+        padding: 15px;
+        text-align: center;
+        font-size: 1rem;
+        color: var(--clr-text-light);
+    }
+    
+    .submenu li a:hover {
+        padding-left: 15px; /* Убираем эффект сдвига на мобильном */
+        color: var(--clr-accent);
+        background: transparent;
+    }
+    
+    .arrow-down {
+        display: none; /* Скрываем стрелку на мобильном, чтобы не мешала */
+    }
+}
+
+
+
+
+
+/* =========================================
+   ЭФФЕКТ ОРАНЖЕВОЙ ЛИНИИ (HOVER)
+   ========================================= */
+
+/* 1. Настраиваем ссылки верхнего уровня */
+.nav-list > li > a {
+    position: relative; /* Обязательно для позиционирования линии */
+    padding-bottom: 5px; /* Отступ текста от линии */
+}
+
+/* 2. Рисуем саму линию (изначально скрытую) */
+.nav-list > li > a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0; /* Ширина 0 = скрыта */
+    height: 2px; /* Толщина линии */
+    background-color: var(--clr-secondary); /* Оранжевый цвет */
+    transition: width 0.3s ease; /* Плавная анимация */
+}
+
+/* 3. Показываем линию при наведении и у активной ссылки */
+.nav-list > li > a:hover::after,
+.nav-list > li > a.active::after {
+    width: 100%; /* Растягиваем на всю ширину */
+}
+
+/* 4. ВАЖНО: Отключаем эту линию для выпадающего меню (чтобы там не было каши) */
+.submenu li a::after {
+    display: none !important;
+}
