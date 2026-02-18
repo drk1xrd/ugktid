@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости | УГКТиД</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-abbr">УГКТиД</span>
+                <span class="logo-full">Уфимский государственный колледж<br>технологии и дизайна</span>
+            </a>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="specialties.html">Специальности</a></li>
+                    <li><a href="abiturient.html">Абитуриенту</a></li>
+                    <li><a href="student.html">Студенту</a></li>
+                    <li><a href="news.html" class="active">Новости</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <button class="burger-menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Заголовок страницы -->
+        <section class="page-header">
+            <div class="container">
+                <h1>Жизнь колледжа</h1>
+                <p>События, мероприятия, достижения студентов и преподавателей.</p>
+            </div>
+        </section>
+
+        <section class="container content-section">
+            
+            <!-- Фильтры новостей -->
+            <div class="news-filters">
+                <button class="filter-btn active" data-filter="all">Все</button>
+                <button class="filter-btn" data-filter="events">Мероприятия</button>
+                <button class="filter-btn" data-filter="education">Учеба</button>
+                <button class="filter-btn" data-filter="sports">Спорт</button>
+                <button class="filter-btn" data-filter="contests">Конкурсы</button>
+            </div>
+
+            <!-- Сетка новостей -->
+            <div class="news-grid">
+                
+                <!-- Новость 1 -->
+                <article class="news-card" data-category="events">
+                    <div class="news-image" style="background-image: url('https://placehold.co/600x400/2a5298/fff?text=Open+Day');"></div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="news-date">25 Октября 2023</span>
+                            <span class="news-tag">Мероприятия</span>
+                        </div>
+                        <h3>День открытых дверей: Как это было</h3>
+                        <p>Фотоотчет с прошедшего мероприятия. Будущие абитуриенты познакомились с мастерскими...</p>
+                        <a href="#" class="read-more">Читать далее &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Новость 2 -->
+                <article class="news-card" data-category="contests">
+                    <div class="news-image" style="background-image: url('https://placehold.co/600x400/fca311/fff?text=WorldSkills');"></div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="news-date">20 Октября 2023</span>
+                            <span class="news-tag">Конкурсы</span>
+                        </div>
+                        <h3>Победа в региональном этапе WorldSkills</h3>
+                        <p>Студентка группы Д-31 заняла первое место в компетенции "Графический дизайн".</p>
+                        <a href="#" class="read-more">Читать далее &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Новость 3 -->
+                <article class="news-card" data-category="education">
+                    <div class="news-image" style="background-image: url('https://placehold.co/600x400/1e3c72/fff?text=Exam');"></div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="news-date">15 Октября 2023</span>
+                            <span class="news-tag">Учеба</span>
+                        </div>
+                        <h3>График промежуточной аттестации</h3>
+                        <p>Опубликовано расписание зачетов и экзаменов для студентов очного отделения.</p>
+                        <a href="#" class="read-more">Читать далее &rarr;</a>
+                    </div>
+                </article>
+
+                <!-- Новость 4 -->
+                <article class="news-card" data-category="sports">
+                    <div class="news-image" style="background-image: url('https://placehold.co/600x400/333/fff?text=Sport');"></div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="news-date">10 Октября 2023</span>
+                            <span class="news-tag">Спорт</span>
+                        </div>
+                        <h3>Турнир по волейболу среди первокурсников</h3>
+                        <p>Завершились соревнования в спортивном зале колледжа. Поздравляем победителей!</p>
+                        <a href="#" class="read-more">Читать далее &rarr;</a>
+                    </div>
+                </article>
+
+                 <!-- Новость 5 -->
+                 <article class="news-card" data-category="events">
+                    <div class="news-image" style="background-image: url('https://placehold.co/600x400/555/fff?text=Concert');"></div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="news-date">05 Октября 2023</span>
+                            <span class="news-tag">Мероприятия</span>
+                        </div>
+                        <h3>Праздничный концерт ко Дню учителя</h3>
+                        <p>Студенческий совет подготовил яркую программу для преподавателей колледжа.</p>
+                        <a href="#" class="read-more">Читать далее &rarr;</a>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Пагинация -->
+            <div class="pagination">
+                <a href="#" class="page-link disabled">&larr;</a>
+                <a href="#" class="page-link active">1</a>
+                <a href="#" class="page-link">2</a>
+                <a href="#" class="page-link">3</a>
+                <span class="page-dots">...</span>
+                <a href="#" class="page-link">12</a>
+                <a href="#" class="page-link">&rarr;</a>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>УГКТиД</h4>
+                <p>Государственное бюджетное профессиональное образовательное учреждение.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Навигация</h4>
+                <ul>
+                    <li><a href="abiturient.html">Абитуриенту</a></li>
+                    <li><a href="specialties.html">Специальности</a></li>
+                    <li><a href="schedule.html">Расписание</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Контакты</h4>
+                <p>📍 г. Уфа, ул. Чернышевского, 141</p>
+                <p>📞 +7 (347) 200-00-00</p>
+            </div>
+            <div class="footer-col">
+                <h4>Соцсети</h4>
+                <div class="social-links">
+                    <a href="#">VK</a>
+                    <a href="#">TG</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 УГКТиД. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    
+    <!-- Небольшой скрипт для фильтрации новостей -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filters = document.querySelectorAll('.filter-btn');
+            const cards = document.querySelectorAll('.news-card');
+
+            filters.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Активный класс кнопки
+                    filters.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const category = btn.getAttribute('data-filter');
+
+                    cards.forEach(card => {
+                        if (category === 'all' || card.getAttribute('data-category') === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Студенту | УГКТиД</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo"><span class="logo-abbr">УГКТиД</span></a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="specialties.html">Специальности</a></li>
+                    <li><a href="abiturient.html">Абитуриенту</a></li>
+                    <li><a href="schedule.html" class="active">Студенту</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="burger-menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Учебный процесс</h1>
+            </div>
+        </section>
+
+        <section class="container content-section">
+            <!-- Табы переключения -->
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="tab-1">Расписание звонков</button>
+                <button class="tab-btn" data-tab="tab-2">Расписание занятий</button>
+            </div>
+
+            <!-- Контент Таб 1: Звонки -->
+            <div id="tab-1" class="tab-content active">
+                <h1>Расписание звонков</h1>
+                <h2>Экономическое отделение</h2>
+                <p>Понедельник</p>
+                <div class="table-responsive">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Пара</th>
+                                <th>Время</th>
+                                <th>Перемена</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Разговоры о важном</td>
+                                <td>08:30 – 9:10</td>
+                                <td>5 минут</td>
+                            </tr>
+                            <tr>
+                                <td>1 пара</td>
+                                <td>09:15 – 10:35</td>
+                                <td>10 минут</td>
+                            </tr>
+                            <tr>
+                                <td>2 пара</td>
+                                <td>10:45 – 12:05</td>
+                                <td>45 минут </td>
+                            </tr>
+                            <tr>
+                                <td>3 пара</td>
+                                <td>12:50 – 14:15</td>
+                                <td>5 минут</td>
+                            </tr>
+                            <tr>
+                                <td>4 пара</td>
+                                <td>14:20 – 15:40</td>
+                                <td>20 минут</td>
+                            </tr>
+                                                        <tr>
+                                <td>5 пара</td>
+                                <td>16:00 – 17:20</td>
+                                <td>5 минут</td>
+                            </tr>
+                                                        <tr>
+                                <td>6 пара</td>
+                                <td>17:25 – 18:45</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+             <div id="tab-1" class="tab-content active">
+                <p>Вторник, среда, пятница</p>
+                <div class="table-responsive">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Пара</th>
+                                <th>Время</th>
+                                <th>Перемена</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1 пара</td>
+                                <td>08:30 – 9:50</td>
+                                <td>10 минут</td>
+                            </tr>
+                            <tr>
+                                <td>2 пара</td>
+                                <td>10:00 – 11:20</td>
+                                <td>10 минут</td>
+                            </tr>
+                            <tr>
+                                <td>3 пара</td>
+                                <td>11:30 – 12:10 <br> Перерыв 40 минут <br> 12:50 - 13:30</td>
+                                <td>10 минут</td>
+                            </tr>
+                            <tr>
+                                <td>4 пара</td>
+                                <td>13:40 – 15:00</td>
+                                <td>5 минут</td>
+                            </tr>
+                            <tr>
+                                <td>5 пара</td>
+                                <td>15:05 – 16:25</td>
+                                <td>20 минут</td>
+                            </tr>
+                            <tr>
+                                <td>6 пара</td>
+                                <td>16:45 – 18:05</td>
+                                <td>5 минут</td>
+                            </tr>
+                            <tr>
+                                <td>7 пара</td>
+                                <td>18:10 – 19:30</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="tab-1" class="tab-content active">
+                <p>Четверг</p>
+                <div class="table-responsive">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Пара</th>
+                                <th>Время</th>
+                                <th>Перемена</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                                <td>Классный час</td>
+                                <td>08:30 – 9:15</td>
+                                <td>5 минут</td>
+                            </tr>
+                            <tr>
+                                <td>1 пара</td>
+                                <td>09:20 – 10:40</td>
+                                <td>10 минут</td>
+                            </tr>
+                            <tr>
+                                <td>2 пара</td>
+                                <td>10:50 – 12:10</td>
+                                <td>45 минут</td>
+                            </tr>
+                            <tr>
+                                <td>3 пара</td>
+                                <td>12:55 – 14:15</td>
+                                <td>5 минут</td>
+                            </tr>
+                            <tr>
+                                <td>4 пара</td>
+                                <td>14:20 – 15:40</td>
+                                <td>5 минут</td>
+                            </tr>
+                            <tr>
+                                <td>Классный час</td>
+                                <td>15:45 – 16:30</td>
+                                <td>15 минут</td>
+                            </tr>
+                            <tr>
+                                <td>5 пара</td>
+                                <td>16:45 – 18:05</td>
+                                <td>5 минут</td>
+                            </tr>
+                            <tr>
+                                <td>6 пара</td>
+                                <td>18:10 – 19:30</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="tab-1" class="tab-content active">
+                <p>Суббота<p>
+                <div class="table-responsive">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Пара</th>
+                                <th>Время</th>
+                                <th>Перемена</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1 пара</td>
+                                <td>08:30 – 9:50</td>
+                                <td>10 минут</td>
+                            </tr>
+                            <tr>
+                                <td>2 пара</td>
+                                <td>10:00 – 11:20</td>
+                                <td>30 минут</td>
+                            </tr>
+                            <tr>
+                                <td>3 пара</td>
+                                <td>11:50 – 13:10</td>
+                                <td>5 минут</td>
+                            </tr>
+                            <tr>
+                                <td>4 пара</td>
+                                <td>13:15 – 14:35</td>
+                                <td>5 минут</td>
+                            </tr>
+                            <tr>
+                                <td>5 пара</td>
+                                <td>14:40 – 16:00</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="tab-1" class="tab-content active">
+                
+                <h2>Производственное отделение</h2>
+                <p>Понедельник</p>
+                <div class="table-responsive">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Пара</th>
+                                <th>Время</th>
+                                <th>Перемена</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Разговоры о важном</td>
+                                <td>08:30 – 9:10</td>
+                                <td>5 минут</td>
+                            </tr>
+                            <tr>
+                                <td>1 пара</td>
+                                <td>09:15 – 10:35</td>
+                                <td>10 минут</td>
+                            </tr>
+                            <tr>
+                                <td>2 пара</td>
+                                <td>10:45 – 12:05</td>
+                                <td>5 минут </td>
+                            </tr>
+                            <tr>
+                                <td>3 пара</td>
+                                <td>12:10 – 12:50 <br> Перерыв 40 минут <br> 13:30 - 14:15</td>
+                                <td>5 минут</td>
+                            </tr>
+                            <tr>
+                                <td>4 пара</td>
+                                <td>14:20 – 15:40</td>
+                                <td>20 минут</td>
+                            </tr>
+                                                        <tr>
+                                <td>5 пара</td>
+                                <td>16:00 – 17:20</td>
+                                <td>5 минут</td>
+                            </tr>
+                                                        <tr>
+                                <td>6 пара</td>
+                                <td>17:25 – 18:45</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="tab-1" class="tab-content active">
+            <p>Вторник, среда, пятница</p>
+                <div class="table-responsive">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Пара</th>
+                                <th>Время</th>
+                                <th>Перемена</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1 пара</td>
+                                <td>08:30 – 9:50</td>
+                                <td>10 минут</td>
+                            </tr>
+                            <tr>
+                                <td>2 пара</td>
+                                <td>10:00 – 11:20</td>
+                                <td>10 минут</td>
+                            </tr>
+                            <tr>
+                                <td>3 пара</td>
+                                <td>11:30 – 13:30</td>
+                                <td>50 минут</td>
+                            </tr>
+                            <tr>
+                                <td>4 пара</td>
+                                <td>13:40 – 15:00</td>
+                                <td>5 минут</td>
+                            </tr>
+                            <tr>
+                                <td>5 пара</td>
+                                <td>15:05 – 16:25</td>
+                                <td>20 минут</td>
+                            </tr>
+                            <tr>
+                                <td>6 пара</td>
+                                <td>16:45 – 18:05</td>
+                                <td>5 минут</td>
+                            </tr>
+                            <tr>
+                                <td>7 пара</td>
+                                <td>18:10 – 19:30</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="tab-1" class="tab-content active">
+                <p>Четверг</p>
+                <div class="table-responsive">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Пара</th>
+                                <th>Время</th>
+                                <th>Перемена</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           <tr>
+                                <td>Классный час</td>
+                                <td>08:30 – 9:15</td>
+                                <td>5 минут</td>
+                            </tr>
+                            <tr>
+                                <td>1 пара</td>
+                                <td>09:20 – 10:40</td>
+                                <td>10 минут</td>
+                            </tr>
+                            <tr>
+                                <td>2 пара</td>
+                                <td>10:50 – 12:10</td>
+                                <td>5 минут</td>
+                            </tr>
+                            <tr>
+                                <td>3 пара</td>
+                                <td>12:15 – 12:55 <br> Перерыв 40 минут <br> 13:35 - 14:15</td>
+                                <td>5 минут</td>
+                            </tr>
+                            <tr>
+                                <td>4 пара</td>
+                                <td>14:20 – 15:40</td>
+                                <td>5 минут</td>
+                            </tr>
+                            <tr>
+                                <td>Классный час</td>
+                                <td>15:45 – 16:30</td>
+                                <td>15 минут</td>
+                            </tr>
+                            <tr>
+                                <td>5 пара</td>
+                                <td>16:45 – 18:05</td>
+                                <td>5 минут</td>
+                            </tr>
+                            <tr>
+                                <td>6 пара</td>
+                                <td>18:10 – 19:30</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="tab-1" class="tab-content active">
+                <p>Суббота<p>
+                <div class="table-responsive">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Пара</th>
+                                <th>Время</th>
+                                <th>Перемена</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1 пара</td>
+                                <td>08:30 – 9:50</td>
+                                <td>10 минут</td>
+                            </tr>
+                            <tr>
+                                <td>2 пара</td>
+                                <td>10:00 – 11:20</td>
+                                <td>30 минут</td>
+                            </tr>
+                            <tr>
+                                <td>3 пара</td>
+                                <td>11:50 – 13:10</td>
+                                <td>5 минут</td>
+                            </tr>
+                            <tr>
+                                <td>4 пара</td>
+                                <td>13:15 – 14:35</td>
+                                <td>5 минут</td>
+                            </tr>
+                            <tr>
+                                <td>5 пара</td>
+                                <td>14:40 – 16:00</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+
+            <!-- Контент Таб 2: Занятия -->
+            <div id="tab-2" class="tab-content">
+                <h2>Расписание занятий (PDF)</h2>
+                <p>Скачайте актуальное расписание для вашего отделения:</p>
+                <div class="file-list">
+                    <a href="#" class="file-link">
+                        <span class="file-icon">📂</span>
+                        <div class="file-info">
+                            <strong>Производственное отделение</strong>
+                            <span>Обновлено: 24.10.2023</span>
+                        </div>
+                        <span class="btn-download">Скачать</span>
+                    </a>
+                    <a href="#" class="file-link">
+                        <span class="file-icon">📂</span>
+                        <div class="file-info">
+                            <strong>Экономическое отделение</strong>
+                            <span>Обновлено: 24.10.2023</span>
+                        </div>
+                        <span class="btn-download">Скачать</span>
+                    </a>
+                </div>
+            </div>
+            <p>ㅤ</p>
+            <p>ㅤ</p>
+            <p>ㅤ</p>
+            <p>ㅤ</p>
+            <p>ㅤ</p>
+            <p>ㅤ</p>
+            <p>ㅤ</p>
+            <p>ㅤ</p>
+            <p>ㅤ</p>
+            <p>ㅤ</p>
+            <p>ㅤ</p>
+            <p>ㅤ</p>
+        </section>
+
+    </main>
+
+    <footer id="contacts" class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>УГКТиД</h4>
+                <p>Государственное бюджетное профессиональное образовательное учреждение.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Навигация</h4>
+                <ul>
+                    <li><a href="#">Сведения об образовательной организации</a></li>
+                    <li><a href="#">Противодействие коррупции</a></li>
+                    <li><a href="#">Безопасность</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Контакты</h4>
+                <p>📍 г. Уфа, ул. Чернышевского, 141</p>
+                <p>📞 +7 (347) 200-00-00</p>
+                <p>✉️ mail@ugktid.ru</p>
+            </div>
+            <div class="footer-col">
+                <h4>Мы в соцсетях</h4>
+                <div class="social-links">
+                    <a href="#">VK</a>
+                    <a href="#">Telegram</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 УГКТиД. Все права защищены.</p>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

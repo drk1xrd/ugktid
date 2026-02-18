@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>УГКТиД | Уфимский государственный колледж технологии и дизайна</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Подключение шрифтов (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <span class="logo-abbr">УГКТиД</span>
+                <span class="logo-full">Уфимский государственный колледж<br>технологии и дизайна</span>
+            </a>
+            
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="#about" class="active">О колледже</a></li>
+                    <li><a href="specialties.html">Специальности</a></li>
+                    <li><a href="abiturient.html">Абитуриенту</a></li>
+                    <li><a href="student.html">Студенту</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a href="#" class="btn btn-outline">Moodle</a>
+                <button class="burger-menu" aria-label="Открыть меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Главный экран (Hero) -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Твое будущее начинается здесь</h1>
+            <p>Ведущий колледж в сфере дизайна, технологий и IT в Республике Башкортостан. Профессионализм, творчество, карьера.</p>
+            <div class="hero-buttons">
+                <a href="#entrant" class="btn btn-primary">Подать документы</a>
+                <a href="#" class="btn btn-white">Расписание занятий</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Быстрый доступ -->
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon">📅</div>
+                    <h3>Расписание</h3>
+                    <p>Актуальное расписание звонков и пар для всех групп.</p>
+                    <a href="student.html">Смотреть &rarr;</a>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🎓</div>
+                    <h3>Специальности</h3>
+                    <p>Полный список направлений подготовки и профессий.</p>
+                    <a href="specialties.html">Выбрать &rarr;</a>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">💻</div>
+                    <h3>Дистанционное обучение</h3>
+                    <p>Вход в систему Moodle и электронную библиотеку.</p>
+                    <a href="#">Войти &rarr;</a>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📞</div>
+                    <h3>Приемная комиссия</h3>
+                    <p>Информация о поступлении, документы и сроки.</p>
+                    <a href="#">Узнать подробнее &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Новости -->
+    <section id="news" class="news">
+        <div class="container">
+            <div class="section-header">
+                <h2>Последние новости</h2>
+                <a href="news.html" class="link-all">Все новости</a>
+            </div>
+            <div class="news-grid">
+                <!-- Карточка новости 1 -->
+                <article class="news-card">
+                    <div class="news-image" style="background-image: url('https://placehold.co/600x400/2a5298/white?text=News+1');"></div>
+                    <div class="news-content">
+                        <span class="news-date">24 Октября 2023</span>
+                        <h3>День открытых дверей в УГКТиД</h3>
+                        <p>Приглашаем школьников и их родителей познакомиться с нашим колледжем...</p>
+                        <a href="#" class="read-more">Читать далее</a>
+                    </div>
+                </article>
+                <!-- Карточка новости 2 -->
+                <article class="news-card">
+                    <div class="news-image" style="background-image: url('https://placehold.co/600x400/1e3c72/white?text=News+2');"></div>
+                    <div class="news-content">
+                        <span class="news-date">20 Октября 2023</span>
+                        <h3>Студенческая весна: Итоги</h3>
+                        <p>Наши студенты заняли призовые места в региональном конкурсе талантов...</p>
+                        <a href="#" class="read-more">Читать далее</a>
+                    </div>
+                </article>
+                <!-- Карточка новости 3 -->
+                <article class="news-card">
+                    <div class="news-image" style="background-image: url('https://placehold.co/600x400/2a5298/white?text=News+3');"></div>
+                    <div class="news-content">
+                        <span class="news-date">15 Октября 2023</span>
+                        <h3>Внимание: изменения в расписании</h3>
+                        <p>Важная информация для студентов 2 и 3 курсов специальности "Дизайн"...</p>
+                        <a href="#" class="read-more">Читать далее</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- О колледже -->
+    <section id="about" class="about">
+        <div class="container about-container">
+            <div class="about-text">
+                <h2>УГКТиД сегодня</h2>
+                <p>Уфимский государственный колледж технологии и дизайна — это современное образовательное учреждение с богатой историей. Мы готовим востребованных специалистов по передовым программам обучения.</p>
+                <ul class="stats-list">
+                    <li><strong>60+</strong> Лет истории</li>
+                    <li><strong>2000+</strong> Студентов</li>
+                    <li><strong>15+</strong> Специальностей</li>
+                </ul>
+            </div>
+            <div class="about-image">
+                <!-- Заглушка изображения колледжа -->
+                <img src="https://placehold.co/500x350/eee/333?text=Photo+College" alt="Здание колледжа">
+            </div>
+        </div>
+    </section>
+
+    <!-- Подвал -->
+    <footer id="contacts" class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <h4>УГКТиД</h4>
+                <p>Государственное бюджетное профессиональное образовательное учреждение.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Навигация</h4>
+                <ul>
+                    <li><a href="#">Сведения об образовательной организации</a></li>
+                    <li><a href="#">Противодействие коррупции</a></li>
+                    <li><a href="#">Безопасность</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Контакты</h4>
+                <p>📍 г. Уфа, ул. Чернышевского, 141</p>
+                <p>📞 +7 (347) 200-00-00</p>
+                <p>✉️ mail@ugktid.ru</p>
+            </div>
+            <div class="footer-col">
+                <h4>Мы в соцсетях</h4>
+                <div class="social-links">
+                    <a href="#">VK</a>
+                    <a href="#">Telegram</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 УГКТиД. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
