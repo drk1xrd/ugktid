@@ -689,8 +689,104 @@ img { max-width: 100%; display: block; object-fit: cover; }
 }
 
 /* =========================================
+   СТИЛИ ДЛЯ СЛАЙДЕРА НОВОСТЕЙ
+   ========================================= */
+
+/* Оболочка, скрывающая лишнее */
+.news-slider-wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    padding: 10px 5px 20px 5px; /* Отступы для теней карточек */
+}
+
+/* Трек, который двигается */
+.news-slider-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    width: 100%;
+}
+
+/* Один слайд (экран) */
+.news-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 0 5px;
+}
+
+/* Сетка внутри слайда (строго 3 колонки) */
+.news-grid-slide {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Управление (Стрелки) */
+.slider-controls {
+    display: flex;
+    gap: 10px;
+}
+
+.slider-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid #e2e8f0;
+    background: var(--bg-surface);
+    color: var(--clr-primary);
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.slider-btn:hover {
+    background: var(--clr-accent);
+    color: var(--clr-white);
+    border-color: var(--clr-accent);
+    transform: scale(1.1);
+}
+
+/* Точки (Пагинация) */
+.slider-dots-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.slider-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #cbd5e1;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.slider-dot.active {
+    background: var(--clr-accent);
+    transform: scale(1.2);
+}
+
+/* =========================================
    9. АДАПТИВ (Mobile)
    ========================================= */
+
+   /* Адаптив слайдера */
+@media (max-width: 900px) {
+    .news-grid-slide {
+        grid-template-columns: 1fr; /* На планшетах и мобильных - 1 колонка */
+        gap: 20px;
+    }
+    
+    /* На мобильном слайд будет длинным (3 карточки друг под другом) */
+    /* Или можно сделать скролл внутри слайда, но 1 колонка - надежнее */
+}
+
 @media (max-width: 900px) {
     .burger-menu { display: flex; }
     .nav {

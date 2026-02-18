@@ -86,44 +86,170 @@
         </div>
     </section>
 
-    <!-- Новости -->
+        <!-- Новости со Слайдером -->
     <section id="news" class="news">
         <div class="container">
             <div class="section-header">
                 <h2>Последние новости</h2>
-                <a href="news.html" class="link-all">Все новости</a>
+                <div class="slider-controls">
+                    <!-- Кнопки управления -->
+                    <button class="slider-btn prev-btn" aria-label="Назад">←</button>
+                    <button class="slider-btn next-btn" aria-label="Вперед">→</button>
+                </div>
             </div>
-            <div class="news-grid">
-                <!-- Карточка новости 1 -->
-                <article class="news-card">
-                    <div class="news-image" style="background-image: url('https://placehold.co/600x400/2a5298/white?text=News+1');"></div>
-                    <div class="news-content">
-                        <span class="news-date">24 Октября 2023</span>
-                        <h3>День открытых дверей в УГКТиД</h3>
-                        <p>Приглашаем школьников и их родителей познакомиться с нашим колледжем...</p>
-                        <a href="#" class="read-more">Читать далее</a>
+
+            <!-- Оболочка слайдера -->
+            <div class="news-slider-wrapper">
+                <div class="news-slider-track">
+
+                    <!-- СЛАЙД 1 -->
+                    <div class="news-slide">
+                        <div class="news-grid-slide">
+                            <!-- Карточка 1.1 -->
+                            <article class="news-card">
+                                <div class="news-image" style="background-image: url('https://placehold.co/600x400/0f172a/fff?text=News+1');"></div>
+                                <div class="news-content">
+                                    <span class="news-date">25 Октября 2023</span>
+                                    <h3>День открытых дверей</h3>
+                                    <p>Приглашаем школьников познакомиться с колледжем.</p>
+                                    <a href="#" class="read-more">Читать далее</a>
+                                </div>
+                            </article>
+                            <!-- Карточка 1.2 -->
+                            <article class="news-card">
+                                <div class="news-image" style="background-image: url('https://placehold.co/600x400/3b82f6/fff?text=News+2');"></div>
+                                <div class="news-content">
+                                    <span class="news-date">24 Октября 2023</span>
+                                    <h3>Победа в WorldSkills</h3>
+                                    <p>Наши студенты заняли призовые места в компетенции "Дизайн".</p>
+                                    <a href="#" class="read-more">Читать далее</a>
+                                </div>
+                            </article>
+                            <!-- Карточка 1.3 -->
+                            <article class="news-card">
+                                <div class="news-image" style="background-image: url('https://placehold.co/600x400/f59e0b/fff?text=News+3');"></div>
+                                <div class="news-content">
+                                    <span class="news-date">22 Октября 2023</span>
+                                    <h3>Спортивный марафон</h3>
+                                    <p>Отчет о прошедшем осеннем кроссе среди первокурсников.</p>
+                                    <a href="#" class="read-more">Читать далее</a>
+                                </div>
+                            </article>
+                        </div>
                     </div>
-                </article>
-                <!-- Карточка новости 2 -->
-                <article class="news-card">
-                    <div class="news-image" style="background-image: url('https://placehold.co/600x400/1e3c72/white?text=News+2');"></div>
-                    <div class="news-content">
-                        <span class="news-date">20 Октября 2023</span>
-                        <h3>Студенческая весна: Итоги</h3>
-                        <p>Наши студенты заняли призовые места в региональном конкурсе талантов...</p>
-                        <a href="#" class="read-more">Читать далее</a>
+
+                    <!-- СЛАЙД 2 -->
+                    <div class="news-slide">
+                        <div class="news-grid-slide">
+                            <article class="news-card">
+                                <div class="news-image" style="background-image: url('https://placehold.co/600x400/222/fff?text=News+4');"></div>
+                                <div class="news-content">
+                                    <span class="news-date">20 Октября 2023</span>
+                                    <h3>Новое оборудование</h3>
+                                    <p>В мастерские завезли современные швейные машины.</p>
+                                    <a href="#" class="read-more">Читать далее</a>
+                                </div>
+                            </article>
+                            <article class="news-card">
+                                <div class="news-image" style="background-image: url('https://placehold.co/600x400/333/fff?text=News+5');"></div>
+                                <div class="news-content">
+                                    <span class="news-date">18 Октября 2023</span>
+                                    <h3>Лекция от экспертов</h3>
+                                    <p>Представители IT-компаний провели встречу со студентами.</p>
+                                    <a href="#" class="read-more">Читать далее</a>
+                                </div>
+                            </article>
+                            <article class="news-card">
+                                <div class="news-image" style="background-image: url('https://placehold.co/600x400/444/fff?text=News+6');"></div>
+                                <div class="news-content">
+                                    <span class="news-date">15 Октября 2023</span>
+                                    <h3>Волонтерское движение</h3>
+                                    <p>Наш отряд помог в организации городского праздника.</p>
+                                    <a href="#" class="read-more">Читать далее</a>
+                                </div>
+                            </article>
+                        </div>
                     </div>
-                </article>
-                <!-- Карточка новости 3 -->
-                <article class="news-card">
-                    <div class="news-image" style="background-image: url('https://placehold.co/600x400/2a5298/white?text=News+3');"></div>
-                    <div class="news-content">
-                        <span class="news-date">15 Октября 2023</span>
-                        <h3>Внимание: изменения в расписании</h3>
-                        <p>Важная информация для студентов 2 и 3 курсов специальности "Дизайн"...</p>
-                        <a href="#" class="read-more">Читать далее</a>
+
+                    <!-- СЛАЙД 3 -->
+                    <div class="news-slide">
+                        <div class="news-grid-slide">
+                            <article class="news-card">
+                                <div class="news-image" style="background-image: url('https://placehold.co/600x400/555/fff?text=News+7');"></div>
+                                <div class="news-content">
+                                    <span class="news-date">12 Октября 2023</span>
+                                    <h3>Конкурс талантов</h3>
+                                    <p>Итоги ежегодного фестиваля "Студенческая осень".</p>
+                                    <a href="#" class="read-more">Читать далее</a>
+                                </div>
+                            </article>
+                            <article class="news-card">
+                                <div class="news-image" style="background-image: url('https://placehold.co/600x400/666/fff?text=News+8');"></div>
+                                <div class="news-content">
+                                    <span class="news-date">10 Октября 2023</span>
+                                    <h3>Изменения в расписании</h3>
+                                    <p>Важная информация для групп экономического отделения.</p>
+                                    <a href="#" class="read-more">Читать далее</a>
+                                </div>
+                            </article>
+                            <article class="news-card">
+                                <div class="news-image" style="background-image: url('https://placehold.co/600x400/777/fff?text=News+9');"></div>
+                                <div class="news-content">
+                                    <span class="news-date">08 Октября 2023</span>
+                                    <h3>Экскурсия в музей</h3>
+                                    <p>Студенты-дизайнеры посетили выставку современного искусства.</p>
+                                    <a href="#" class="read-more">Читать далее</a>
+                                </div>
+                            </article>
+                        </div>
                     </div>
-                </article>
+
+                    <!-- СЛАЙД 4 -->
+                    <div class="news-slide">
+                        <div class="news-grid-slide">
+                            <article class="news-card">
+                                <div class="news-image" style="background-image: url('https://placehold.co/600x400/888/fff?text=News+10');"></div>
+                                <div class="news-content">
+                                    <span class="news-date">05 Октября 2023</span>
+                                    <h3>Библиотечный день</h3>
+                                    <p>Обзор новинок профессиональной литературы.</p>
+                                    <a href="#" class="read-more">Читать далее</a>
+                                </div>
+                            </article>
+                            <article class="news-card">
+                                <div class="news-image" style="background-image: url('https://placehold.co/600x400/999/fff?text=News+11');"></div>
+                                <div class="news-content">
+                                    <span class="news-date">01 Октября 2023</span>
+                                    <h3>День пожилых людей</h3>
+                                    <p>Праздничный концерт и чаепитие для ветеранов колледжа.</p>
+                                    <a href="#" class="read-more">Читать далее</a>
+                                </div>
+                            </article>
+                            <article class="news-card">
+                                <div class="news-image" style="background-image: url('https://placehold.co/600x400/000/fff?text=News+12');"></div>
+                                <div class="news-content">
+                                    <span class="news-date">28 Сентября 2023</span>
+                                    <h3>Профилактика гриппа</h3>
+                                    <p>Началась вакцинация студентов и сотрудников.</p>
+                                    <a href="#" class="read-more">Читать далее</a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Точки пагинации -->
+            <div class="slider-dots-container">
+                <button class="slider-dot active" data-index="0"></button>
+                <button class="slider-dot" data-index="1"></button>
+                <button class="slider-dot" data-index="2"></button>
+                <button class="slider-dot" data-index="3"></button>
+            </div>
+            
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="news.html" class="link-all">Все новости →</a>
             </div>
         </div>
     </section>

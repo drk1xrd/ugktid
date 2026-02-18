@@ -81,6 +81,72 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- 5. СЛАЙДЕР НОВОСТЕЙ ---
+    const sliderTrack = document.querySelector('.news-slider-track');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+    const dots = document.querySelectorAll('.slider-dot');
+    
+    // Проверяем, существует ли слайдер на странице
+    if(sliderTrack && prevBtn && nextBtn) {
+        let currentSlide = 0;
+        const totalSlides = dots.length;
+
+        // Функция обновления позиции
+        const updateSlider = () => {
+            // Сдвигаем трек
+            sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Обновляем точки
+            dots.forEach(dot => dot.classList.remove('active'));
+            dots[currentSlide].classList.add('active');
+        };
+
+        // Кнопка Вперед
+        nextBtn.addEventListener('click', () => {
+            currentSlide++;
+            if (currentSlide >= totalSlides) {
+                currentSlide = 0; // Зацикливание
+            }
+            updateSlider();
+        });
+
+        // Кнопка Назад
+        prevBtn.addEventListener('click', () => {
+            currentSlide--;
+            if (currentSlide < 0) {
+                currentSlide = totalSlides - 1; // Зацикливание
+            }
+            updateSlider();
+        });
+
+        // Клик по точкам
+        dots.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                currentSlide = parseInt(e.target.getAttribute('data-index'));
+                updateSlider();
+            });
+        });
+
+        // (Опционально) Авто-перелистывание каждые 5 секунд
+        let autoPlay = setInterval(() => {
+            currentSlide++;
+            if (currentSlide >= totalSlides) currentSlide = 0;
+            updateSlider();
+        }, 8000);
+
+        // Остановка при наведении мыши
+        const sliderWrapper = document.querySelector('.news-slider-wrapper');
+        sliderWrapper.addEventListener('mouseenter', () => clearInterval(autoPlay));
+        sliderWrapper.addEventListener('mouseleave', () => {
+            autoPlay = setInterval(() => {
+                currentSlide++;
+                if (currentSlide >= totalSlides) currentSlide = 0;
+                updateSlider();
+            }, 8000);
+        });
+    }
+
     // --- 4. Анимация при скролле (Scroll Reveal) ---
     // Выбираем элементы, которые хотим анимировать
     const animatedElements = document.querySelectorAll(
