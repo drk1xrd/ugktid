@@ -314,16 +314,57 @@ img { max-width: 100%; height: auto; display: block; object-fit: cover; }
 .page-header p { font-size: 1rem; color: var(--clr-text-light); max-width: 600px; margin: 0 auto; }
 
 /* Абитуриент */
-.steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; margin-bottom: 60px; }
-.step-card { background: var(--bg-surface); padding: 25px; border-radius: var(--radius); box-shadow: 0 4px 10px rgba(0,0,0,0.05); position: relative; }
-.step-number { font-size: 3rem; font-weight: 900; color: rgba(59, 130, 246, 0.1); position: absolute; top: 10px; right: 15px; }
 
-.info-block-wrapper { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; }
-.info-block { background: var(--bg-surface); padding: 30px; border-radius: var(--radius); box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-.doc-list li { padding: 10px 0; border-bottom: 1px solid #f1f5f9; padding-left: 20px; position: relative; }
-.doc-list li::before { content: "✓"; color: var(--clr-accent); position: absolute; left: 0; }
-.contact-admission { background: var(--clr-primary); color: var(--clr-white); }
-.contact-admission h2 { color: var(--clr-white); }
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.step-card {
+    background: var(--bg-surface);
+    padding: 30px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    position: relative; /* Важно для позиционирования цифры */
+    border: 1px solid #f1f5f9;
+    overflow: hidden; /* Обрезаем цифру, если она слишком большая */
+    z-index: 1; /* Создаем контекст наложения */
+    transition: transform 0.3s ease;
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.step-card h3 {
+    position: relative;
+    z-index: 2; /* Текст поверх цифры */
+    margin-right: 60px; /* Отступ справа, чтобы текст не налипал на цифру */
+    margin-bottom: 15px;
+    font-size: 1.25rem;
+}
+
+.step-card p {
+    position: relative;
+    z-index: 2; /* Текст поверх цифры */
+    color: var(--clr-text-light);
+}
+
+.step-number {
+    font-family: var(--font-head);
+    font-size: 5rem; /* Крупный размер */
+    font-weight: 900;
+    color: rgba(59, 130, 246, 0.1); /* Полупрозрачный цвет (Watermark) */
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    line-height: 1;
+    z-index: 0; /* Убираем на самый задний план */
+    pointer-events: none; /* Чтобы цифра не мешала выделять текст */
+}
 
 /* Специальности */
 .specs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 25px; }
