@@ -727,45 +727,152 @@ img { max-width: 100%; height: auto; display: block; object-fit: cover; }
 
 /* --- MOBILE ВЕРСИЯ (CLICK) --- */
 @media (max-width: 900px) {
-    .has-submenu {
+    
+    /* 1. Навигация (Боковая панель) */
+    .burger-menu { display: flex; }
+    
+    .nav {
+        position: fixed;
+        top: var(--header-height);
+        left: 0;
         width: 100%;
+        height: calc(100vh - var(--header-height));
+        background: rgba(255, 255, 255, 0.98); /* Почти непрозрачный белый */
+        backdrop-filter: blur(20px);
+        padding: 20px 20px 60px 20px; /* Больше отступа снизу */
+        border-top: 1px solid #e2e8f0;
+        
+        /* Скрыто по умолчанию */
+        transform: translateX(100%);
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow-y: auto; /* Скролл внутри меню */
+        z-index: 999;
+    }
+
+    .nav.active {
+        transform: translateX(0);
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /* Список ссылок */
+    .nav-list {
+        flex-direction: column;
         align-items: center;
-    }
-
-    .submenu {
-        display: none; /* Скрыто по умолчанию */
+        gap: 0; /* Убираем gap, будем использовать margin/padding */
         width: 100%;
-        background-color: #f8fafc;
-        border-radius: 8px;
-        margin-top: 10px;
-        padding: 5px 0;
-        border: 1px solid #e2e8f0;
     }
 
-    /* Класс .open добавляется через JS при клике */
-    .has-submenu.open .submenu {
-        display: block; /* Показываем */
-        animation: slideDown 0.3s ease;
+    /* Основные ссылки */
+    .nav-list > li {
+        width: 100%;
+        border-bottom: 1px solid #f1f5f9; /* Тонкие разделители */
+    }
+
+    .nav-list > li > a {
+        display: flex;
+        justify-content: center; /* Центрируем текст */
+        align-items: center;
+        padding: 18px 0;
+        font-size: 1.1rem;
+        width: 100%;
+        color: var(--clr-primary);
+        transition: color 0.3s;
+    }
+
+    /* Убираем оранжевую полоску на мобильном (она там не нужна) */
+    .nav-list > li > a::after { display: none; }
+
+    /* Активная ссылка */
+    .nav-list > li > a:hover,
+    .nav-list > li > a.active {
+        color: var(--clr-accent);
+    }
+
+    /* --- ВЫПАДАЮЩЕЕ МЕНЮ (АККОРДЕОН) --- */
+    
+    .has-submenu {
+        flex-direction: column; /* Вертикальная ориентация */
+    }
+
+    /* Ссылка-переключатель */
+    .dropdown-toggle {
+        cursor: pointer;
+        position: relative;
+    }
+
+    /* Стрелочка */
+    .arrow-down {
+        margin-left: 8px;
+        transition: transform 0.4s ease;
+        font-size: 0.8rem;
+        color: var(--clr-text-light);
+    }
+
+    /* Состояние открытого меню */
+    .has-submenu.open > .dropdown-toggle {
+        color: var(--clr-accent); /* Подсветка родителя */
+        font-weight: 700;
     }
 
     .has-submenu.open .arrow-down {
         transform: rotate(180deg);
+        color: var(--clr-accent);
+    }
+
+    /* Контейнер подменю (Скрыт) */
+    .submenu {
+        width: 100%;
+        max-height: 0; /* Высота 0 для анимации */
+        opacity: 0;
+        overflow: hidden;
+        background-color: #f8fafc; /* Легкий серый фон "внутри" */
+        border-radius: 12px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Плавное скольжение */
+        margin-top: 0;
+    }
+
+    /* Контейнер подменю (Открыт) */
+    .has-submenu.open .submenu {
+        max-height: 300px; /* Достаточно большая высота */
+        opacity: 1;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        border: 1px solid #e2e8f0;
+        padding: 5px 0; /* Небольшой отступ внутри */
+    }
+
+    /* Ссылки внутри подменю */
+    .submenu li {
+        width: 100%;
+        text-align: center;
     }
 
     .submenu li a {
-        padding: 12px;
-        text-align: center;
+        padding: 12px 20px;
         font-size: 0.95rem;
         color: var(--clr-text-light);
-        border-bottom: 1px solid rgba(0,0,0,0.03);
+        font-weight: 500;
+        border-bottom: 1px solid rgba(0,0,0,0.03); /* Очень слабые разделители */
     }
-    
-    .submenu li a:hover { color: var(--clr-accent); }
-    
-    @keyframes slideDown {
-        from { opacity: 0; transform: translateY(-10px); }
-        to { opacity: 1; transform: translateY(0); }
+
+    .submenu li:last-child a { border-bottom: none; }
+
+    .submenu li a:hover {
+        background-color: rgba(59, 130, 246, 0.05); /* Легкая подсветка при нажатии */
+        color: var(--clr-accent);
     }
+
+    /* --- ОСТАЛЬНОЙ АДАПТИВ (Главная и т.д.) --- */
+    .hero-content h1 { font-size: 2.2rem; }
+    .news-grid-slide { grid-template-columns: 1fr; } /* Слайдер в 1 колонку */
+    .news-grid-slide article:nth-child(3) { display: flex; } /* Показываем 3-ю карточку */
+    
+    .logo-full { display: none; }
+    .footer-grid { grid-template-columns: 1fr; text-align: center; }
+    .social-links { justify-content: center; }
 }
 
 
