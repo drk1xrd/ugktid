@@ -453,6 +453,125 @@ img { max-width: 100%; height: auto; display: block; object-fit: cover; }
     .footer-grid { grid-template-columns: 1fr; text-align: center; }
     .social-links { justify-content: center; }
 }
+/* =========================================
+   СТИЛИ ДЛЯ СТРАНИЦЫ ВСЕХ НОВОСТЕЙ (news.html)
+   ========================================= */
+
+/* 1. Сетка новостей (отличается от слайдера) */
+.news-page-grid {
+    display: grid;
+    /* Автоматическое заполнение: минимум 300px, иначе растягиваем */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+    width: 100%;
+}
+
+/* 2. Фильтры (Кнопки категорий) */
+.news-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 50px;
+}
+
+.filter-btn {
+    padding: 12px 28px;
+    background-color: transparent;
+    border: 1px solid #cbd5e1; /* Светло-серый бордюр */
+    border-radius: 50px;        /* Овальные кнопки */
+    font-family: var(--font-head);
+    font-weight: 600;
+    color: var(--clr-text-light);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.filter-btn:hover {
+    border-color: var(--clr-accent);
+    color: var(--clr-accent);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background-color: var(--clr-primary); /* Темно-синий активный */
+    color: var(--clr-white);
+    border-color: var(--clr-primary);
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.2);
+}
+
+/* 3. Пагинация (Номера страниц) */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.page-link {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-surface);
+    border: 1px solid #e2e8f0;
+    border-radius: 12px; /* Мягкий квадрат */
+    font-weight: 600;
+    font-family: var(--font-head);
+    color: var(--clr-text-main);
+    transition: all 0.2s ease;
+}
+
+.page-link:hover {
+    border-color: var(--clr-accent);
+    color: var(--clr-accent);
+}
+
+.page-link.active {
+    background-color: var(--clr-accent);
+    color: var(--clr-white);
+    border-color: var(--clr-accent);
+    box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+}
+
+.page-link.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+    background-color: #f1f5f9;
+}
+
+.page-dots {
+    font-weight: 700;
+    color: var(--clr-text-light);
+    letter-spacing: 2px;
+}
+
+/* 4. Тег категории в карточке (Спорт, Учеба...) */
+.news-tag {
+    display: inline-block;
+    background-color: #eff6ff; /* Очень светло-синий */
+    color: var(--clr-accent);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-left: auto; /* Прижимает вправо, если используется flex */
+}
+
+/* Мета-информация в карточке (Дата + Тег) */
+.news-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
 
 /* --- Очень маленькие экраны (max-width: 480px) --- */
 @media (max-width: 480px) {
@@ -464,3 +583,21 @@ img { max-width: 100%; height: auto; display: block; object-fit: cover; }
 /* Анимация скролла (класс добавляется JS) */
 .scroll-reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
 .scroll-reveal.visible { opacity: 1; transform: translateY(0); }
+/* --- АДАПТИВ ДЛЯ НОВОСТЕЙ --- */
+@media (max-width: 768px) {
+    .news-page-grid {
+        grid-template-columns: 1fr; /* 1 колонка на мобильном */
+        gap: 20px;
+    }
+
+    .news-filters {
+        gap: 10px;
+    }
+    
+    .filter-btn {
+        padding: 8px 20px;
+        font-size: 0.85rem;
+        flex-grow: 1; /* Кнопки растягиваются */
+        text-align: center;
+    }
+}
