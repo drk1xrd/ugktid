@@ -134,7 +134,13 @@ img { max-width: 100%; display: block; object-fit: cover; }
     border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
-.header-container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Центрирование по вертикали */
+    width: 100%;
+    gap: 20px; /* Минимальный отступ между Лого, Меню и Кнопкой */
+}
 
 .logo { 
     display: flex; 
@@ -144,6 +150,7 @@ img { max-width: 100%; display: block; object-fit: cover; }
     z-index: 1001; 
     text-decoration: none;
     height: 100%; /* Занимает всю высоту шапки */
+    flex-shrink: 0; 
 }
 
 .logo-img {
@@ -214,14 +221,21 @@ img { max-width: 100%; display: block; object-fit: cover; }
 
 
 
-.nav-list { display: flex; gap: 32px; }
+.nav-list {
+    display: flex;
+    gap: 20px; /* Уменьшили отступ между ссылками (было 32px) */
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
 .nav-list a {
     font-family: var(--font-head);
     font-weight: 600;
     color: var(--clr-primary);
-    font-size: 0.9rem;
+    font-size: 0.85rem; /* Чуть компактнее шрифт */
     position: relative;
     padding: 5px 0;
+    white-space: nowrap; /* Запрещаем перенос текста ссылок */
 }
 
 /* Красная полоска при наведении */
@@ -232,7 +246,12 @@ img { max-width: 100%; display: block; object-fit: cover; }
 .nav-list > li > a:hover::after, .nav-list > li > a.active::after { width: 100%; }
 .nav-list > li > a:hover, .nav-list > li > a.active { color: var(--clr-accent); }
 
-.header-actions { display: flex; align-items: center; gap: 15px; }
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-shrink: 0; /* Кнопки справа тоже не сжимаются */
+}
 
 /* Бургер меню */
 .burger-menu {
@@ -543,10 +562,19 @@ img { max-width: 100%; display: block; object-fit: cover; }
         transform: translateX(100%); visibility: hidden; opacity: 0;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         overflow-y: auto; z-index: 999;
+            flex-grow: 1; /* Занимает доступное пространство */
+    display: flex;
+    justify-content: center; /* Центрируем меню */
     }
     .nav.active { transform: translateX(0); visibility: visible; opacity: 1; }
     
-    .nav-list { flex-direction: column; align-items: center; width: 100%; gap: 0; }
+    .nav-list {
+    display: flex;
+    gap: 20px; /* Уменьшили отступ между ссылками (было 32px) */
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
     .nav-list > li { width: 100%; border-bottom: 1px solid #f3f4f6; }
     .nav-list > li > a { display: flex; justify-content: center; align-items: center; padding: 18px 0; font-size: 1.1rem; width: 100%; color: var(--clr-primary); }
     .nav-list > li > a::after { display: none; }
