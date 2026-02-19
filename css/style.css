@@ -549,9 +549,7 @@ img { max-width: 100%; display: block; object-fit: cover; }
 }
 
 
-
-/* --- Стили для Яндекс Карты --- */
-
+/* ===== КАРТА ===== */
 .map-section {
     background-color: var(--bg-white);
 }
@@ -571,17 +569,4 @@ img { max-width: 100%; display: block; object-fit: cover; }
     height: 100% !important;
     border: none;
     display: block;
-}
-/* Адаптация под мобильные устройства */
-@media (max-width: 768px) {
-    .map-wrapper {
-        /* На телефонах делаем карту чуть ниже, чтобы она не занимала весь экран 
-           и пользователю было удобно скроллить страницу дальше */
-        height: 300px; 
-    }
-    
-    .map-section .section-desc {
-        font-size: 0.9rem;
-        margin-bottom: 20px;
-    }
 }
