@@ -136,20 +136,54 @@ img { max-width: 100%; display: block; object-fit: cover; }
 
 .header-container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
 
-.logo { display: flex; flex-direction: column; z-index: 1001; }
+.logo { 
+    display: flex; 
+    flex-direction: row; /* Выстраиваем картинку и текст в ряд */
+    align-items: center; 
+    gap: 15px; /* Отступ между картинкой и текстом */
+    z-index: 1001; 
+    text-decoration: none;
+}
+/* Настройки изображения логотипа */
+.logo-img {
+    width: 50px; /* Ширина логотипа */
+    height: 50px; /* Высота логотипа */
+    object-fit: contain; /* Чтобы картинка не сплющивалась */
+}
+/* Обертка для текста, чтобы он оставался друг под другом */
+.logo-text-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
 .logo-abbr {
     font-family: var(--font-head);
     font-weight: 800;
-    font-size: 1.8rem;
-    color: var(--clr-accent); /* Красный логотип */
+    font-size: 1.5rem;
+    color: var(--clr-accent);
     line-height: 1;
 }
 .logo-full {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     color: var(--clr-text-light);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+/* Адаптив для логотипа (на маленьких экранах) */
+@media (max-width: 480px) {
+    .logo-img {
+        width: 40px;
+        height: 40px;
+    }
+    .logo-abbr {
+        font-size: 1.2rem;
+    }
+    .logo-full {
+        font-size: 0.55rem; /* Чуть меньше текст на телефоне */
+    }
 }
 
 .nav-list { display: flex; gap: 32px; }
