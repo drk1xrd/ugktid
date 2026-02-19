@@ -553,34 +553,25 @@ img { max-width: 100%; display: block; object-fit: cover; }
 /* --- Стили для Яндекс Карты --- */
 
 .map-section {
-    background-color: var(--white);
-    /* Небольшой отступ снизу, чтобы карта не прилипала к футеру */
-    padding-bottom: 80px; 
+    background-color: var(--bg-white);
 }
 
 .map-wrapper {
     width: 100%;
-    /* Высота карты на компьютере */
-    height: 500px; 
-    
-    /* Стилизация под дизайн сайта */
-    border-radius: var(--border-radius);
-    overflow: hidden; /* Обрезает карту по скругленным углам */
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* Красивая тень */
-    border: 1px solid #eee;
-    
-    /* Для анимации появления (если используете reveal-on-scroll) */
-    background-color: #f0f0f0; 
+    height: 450px;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-light);
 }
 
-/* Принудительно растягиваем iframe внутри обертки */
 .map-wrapper iframe {
     width: 100% !important;
     height: 100% !important;
     border: none;
     display: block;
 }
-
 /* Адаптация под мобильные устройства */
 @media (max-width: 768px) {
     .map-wrapper {
