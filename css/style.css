@@ -769,3 +769,21 @@ img { max-width: 100%; display: block; object-fit: cover; }
         grid-template-columns: 1fr;
     }
 }
+
+/* --- Стили для карты (Yandex Map) --- */
+.map-responsive {
+    overflow: hidden;
+    position: relative;
+    height: 400px; /* Высота карты */
+    border-radius: 8px; /* Скругление углов */
+    width: 100%;
+}
+
+.map-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: none;
+}
