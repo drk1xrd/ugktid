@@ -26,8 +26,8 @@
     
     /* --- Размеры --- */
     --container-width: 1240px;
-    --header-height: 80px;
-    --radius: 8px; /* Чуть строже радиус */
+    --header-height: 90px; /* УВЕЛИЧИЛИ ВЫСОТУ ШАПКИ */
+    --radius: 8px;
     
     /* --- Тени --- */
     --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
@@ -138,53 +138,81 @@ img { max-width: 100%; display: block; object-fit: cover; }
 
 .logo { 
     display: flex; 
-    flex-direction: row; /* Выстраиваем картинку и текст в ряд */
+    flex-direction: row; 
     align-items: center; 
-    gap: 1px; /* Отступ между картинкой и текстом */
+    gap: 15px; 
     z-index: 1001; 
     text-decoration: none;
+    height: 100%; /* Занимает всю высоту шапки */
 }
-/* Настройки изображения логотипа */
+
 .logo-img {
-    width: 110px; /* Ширина логотипа */
-    height: 110px; /* Высота логотипа */
-    object-fit: contain; /* Чтобы картинка не сплющивалась */
+    height: 70px; /* Крупный размер для ПК */
+    width: auto;  /* Ширина подстроится автоматически */
+    object-fit: contain;
 }
-/* Обертка для текста, чтобы он оставался друг под другом */
+
 .logo-text-wrapper {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
 
 .logo-abbr {
     font-family: var(--font-head);
     font-weight: 800;
-    font-size: 1.5rem;
+    font-size: 1.8rem; /* Увеличили шрифт аббревиатуры */
     color: var(--clr-accent);
     line-height: 1;
+    letter-spacing: -0.5px;
 }
 .logo-full {
-    font-size: 0.65rem;
+    font-size: 0.75rem; /* Чуть крупнее подпись */
     color: var(--clr-text-light);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     line-height: 1.2;
+    max-width: 300px; /* Ограничение ширины для длинного текста */
 }
 
-/* Адаптив для логотипа (на маленьких экранах) */
-@media (max-width: 480px) {
+/* --- АДАПТИВ ЛОГОТИПА --- */
+
+/* Планшеты */
+@media (max-width: 1024px) {
+    .logo-img { height: 60px; }
+    .logo-abbr { font-size: 1.6rem; }
+}
+
+/* Мобильные телефоны */
+@media (max-width: 600px) {
+    /* Уменьшаем высоту шапки на телефоне, чтобы не занимала пол-экрана */
+    :root {
+        --header-height: 70px; 
+    }
+
+    .logo { gap: 10px; }
+
     .logo-img {
-        width: 40px;
-        height: 40px;
+        height: 45px; /* Оптимальный размер для мобильного */
     }
+
     .logo-abbr {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
     }
+
     .logo-full {
-        font-size: 0.55rem; /* Чуть меньше текст на телефоне */
+        font-size: 0.6rem;
+        display: none; /* Если название не влезает на очень узких экранах (<360px), можно скрыть: display: none; */
     }
 }
+
+/* Для совсем маленьких экранов возвращаем название, но скрываем если совсем тесно */
+@media (max-width: 380px) {
+    .logo-full { display: none; } /* Скрываем длинный текст на iPhone SE/mini */
+}
+
+
 
 .nav-list { display: flex; gap: 32px; }
 .nav-list a {
