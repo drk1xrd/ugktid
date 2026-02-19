@@ -652,3 +652,120 @@ img { max-width: 100%; display: block; object-fit: cover; }
         gap: 10px;
     }
 }
+
+/* =========================================
+   СТИЛИ ДЛЯ СТРАНИЦЫ "ОСНОВНЫЕ СВЕДЕНИЯ"
+   ========================================= */
+
+/* Сетка для блоков */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* Карточка информации */
+.info-card {
+    background: var(--bg-surface);
+    padding: 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+/* Карточка на всю ширину (Организация, Телефоны) */
+.full-width {
+    grid-column: 1 / -1;
+}
+
+.info-card h3 {
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f3f4f6;
+    color: var(--clr-text-head);
+    font-size: 1.4rem;
+}
+
+/* Строки информации (Label: Value) */
+.info-row {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-row .label {
+    font-weight: 700;
+    color: var(--clr-text-light);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.info-row .value {
+    color: var(--clr-text-main);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* Список учредителя */
+.founder-list li {
+    margin-bottom: 12px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #f9fafb;
+    font-size: 0.95rem;
+}
+.founder-list li:last-child { border-bottom: none; }
+.founder-list strong { color: var(--clr-text-head); }
+.founder-list a { color: var(--clr-accent); font-weight: 600; }
+
+/* Сетка телефонов */
+.phones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.phone-item {
+    background: #f9fafb;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 3px solid var(--clr-accent);
+}
+
+.phone-item .dept {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--clr-text-light);
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.phone-item a, .phone-item span {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--clr-text-main);
+}
+
+.phone-item a:hover { color: var(--clr-accent); }
+
+/* Выделенный блок контактов */
+.contact-highlight p {
+    margin-bottom: 15px;
+}
+.contact-highlight a {
+    font-size: 1.2rem;
+    color: var(--clr-accent);
+    font-weight: 700;
+}
+
+/* Адаптив about.html */
+@media (max-width: 768px) {
+    .about-grid {
+        grid-template-columns: 1fr; /* Одна колонка на телефоне */
+    }
+    
+    .phones-grid {
+        grid-template-columns: 1fr;
+    }
+}
