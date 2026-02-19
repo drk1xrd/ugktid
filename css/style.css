@@ -548,25 +548,3 @@ img { max-width: 100%; display: block; object-fit: cover; }
     .tab-btn { flex-shrink: 0; }
 }
 
-
-/* ===== КАРТА ===== */
-.map-section {
-    background-color: var(--bg-white);
-}
-
-.map-wrapper {
-    width: 100%;
-    height: 450px;
-    border-radius: var(--border-radius-lg);
-    overflow: hidden;
-    box-shadow: var(--shadow-lg);
-    border: 1px solid var(--border-color);
-    background-color: var(--bg-light);
-}
-
-.map-wrapper iframe {
-    width: 100% !important;
-    height: 100% !important;
-    border: none;
-    display: block;
-}
