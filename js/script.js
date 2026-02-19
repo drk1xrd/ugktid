@@ -18,13 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         // Закрываем меню при клике на ссылку
-        document.querySelectorAll('.nav-list a').forEach(link => {
-            link.addEventListener('click', () => {
-                nav.classList.remove('active');
-                burger.classList.remove('toggle');
-                body.style.overflow = '';
-            });
-        });
+        
+
+        
     }
 
     // --- 2. Табы (Расписание) ---
