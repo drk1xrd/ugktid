@@ -140,14 +140,14 @@ img { max-width: 100%; display: block; object-fit: cover; }
     display: flex; 
     flex-direction: row; /* Выстраиваем картинку и текст в ряд */
     align-items: center; 
-    gap: 5px; /* Отступ между картинкой и текстом */
+    gap: 1px; /* Отступ между картинкой и текстом */
     z-index: 1001; 
     text-decoration: none;
 }
 /* Настройки изображения логотипа */
 .logo-img {
-    width: 90px; /* Ширина логотипа */
-    height: 90px; /* Высота логотипа */
+    width: 110px; /* Ширина логотипа */
+    height: 110px; /* Высота логотипа */
     object-fit: contain; /* Чтобы картинка не сплющивалась */
 }
 /* Обертка для текста, чтобы он оставался друг под другом */
