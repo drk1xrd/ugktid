@@ -26,8 +26,8 @@
     
     /* --- Размеры --- */
     --container-width: 1240px;
-    --header-height: 90px; /* УВЕЛИЧИЛИ ВЫСОТУ ШАПКИ */
-    --radius: 8px;
+    --header-height: 80px;
+    --radius: 8px; /* Чуть строже радиус */
     
     /* --- Тени --- */
     --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
@@ -134,108 +134,32 @@ img { max-width: 100%; display: block; object-fit: cover; }
     border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center; /* Центрирование по вертикали */
-    width: 100%;
-    gap: 20px; /* Минимальный отступ между Лого, Меню и Кнопкой */
-}
+.header-container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
 
-.logo { 
-    display: flex; 
-    flex-direction: row; 
-    align-items: center; 
-    gap: 15px; 
-    z-index: 1001; 
-    text-decoration: none;
-    height: 100%; /* Занимает всю высоту шапки */
-    flex-shrink: 0; 
-}
-
-.logo-img {
-    height: 70px; /* Крупный размер для ПК */
-    width: auto;  /* Ширина подстроится автоматически */
-    object-fit: contain;
-}
-
-.logo-text-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
+.logo { display: flex; flex-direction: column; z-index: 1001; }
 .logo-abbr {
     font-family: var(--font-head);
     font-weight: 800;
-    font-size: 1.8rem; /* Увеличили шрифт аббревиатуры */
-    color: var(--clr-accent);
+    font-size: 1.8rem;
+    color: var(--clr-accent); /* Красный логотип */
     line-height: 1;
-    letter-spacing: -0.5px;
 }
 .logo-full {
-    font-size: 0.75rem; /* Чуть крупнее подпись */
+    font-size: 0.7rem;
     color: var(--clr-text-light);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    line-height: 1.2;
-    max-width: 300px; /* Ограничение ширины для длинного текста */
 }
 
-/* --- АДАПТИВ ЛОГОТИПА --- */
-
-/* Планшеты */
-@media (max-width: 1024px) {
-    .logo-img { height: 60px; }
-    .logo-abbr { font-size: 1.6rem; }
-}
-
-/* Мобильные телефоны */
-@media (max-width: 600px) {
-    /* Уменьшаем высоту шапки на телефоне, чтобы не занимала пол-экрана */
-    :root {
-        --header-height: 70px; 
-    }
-
-    .logo { gap: 10px; }
-
-    .logo-img {
-        height: 45px; /* Оптимальный размер для мобильного */
-    }
-
-    .logo-abbr {
-        font-size: 1.4rem;
-    }
-
-    .logo-full {
-        font-size: 0.6rem;
-        display: none; /* Если название не влезает на очень узких экранах (<360px), можно скрыть: display: none; */
-    }
-}
-
-/* Для совсем маленьких экранов возвращаем название, но скрываем если совсем тесно */
-@media (max-width: 380px) {
-    .logo-full { display: none; } /* Скрываем длинный текст на iPhone SE/mini */
-}
-
-
-
-.nav-list {
-    display: flex;
-    gap: 20px; /* Уменьшили отступ между ссылками (было 32px) */
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
+.nav-list { display: flex; gap: 32px; }
 .nav-list a {
     font-family: var(--font-head);
     font-weight: 600;
     color: var(--clr-primary);
-    font-size: 0.85rem; /* Чуть компактнее шрифт */
+    font-size: 0.9rem;
     position: relative;
     padding: 5px 0;
-    white-space: nowrap; /* Запрещаем перенос текста ссылок */
 }
 
 /* Красная полоска при наведении */
@@ -246,12 +170,7 @@ img { max-width: 100%; display: block; object-fit: cover; }
 .nav-list > li > a:hover::after, .nav-list > li > a.active::after { width: 100%; }
 .nav-list > li > a:hover, .nav-list > li > a.active { color: var(--clr-accent); }
 
-.header-actions {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    flex-shrink: 0; /* Кнопки справа тоже не сжимаются */
-}
+.header-actions { display: flex; align-items: center; gap: 15px; }
 
 /* Бургер меню */
 .burger-menu {
@@ -562,19 +481,10 @@ img { max-width: 100%; display: block; object-fit: cover; }
         transform: translateX(100%); visibility: hidden; opacity: 0;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         overflow-y: auto; z-index: 999;
-            flex-grow: 1; /* Занимает доступное пространство */
-    display: flex;
-    justify-content: center; /* Центрируем меню */
     }
     .nav.active { transform: translateX(0); visibility: visible; opacity: 1; }
     
-    .nav-list {
-    display: flex;
-    gap: 20px; /* Уменьшили отступ между ссылками (было 32px) */
-    align-items: center;
-    margin: 0;
-    padding: 0;
-}
+    .nav-list { flex-direction: column; align-items: center; width: 100%; gap: 0; }
     .nav-list > li { width: 100%; border-bottom: 1px solid #f3f4f6; }
     .nav-list > li > a { display: flex; justify-content: center; align-items: center; padding: 18px 0; font-size: 1.1rem; width: 100%; color: var(--clr-primary); }
     .nav-list > li > a::after { display: none; }
