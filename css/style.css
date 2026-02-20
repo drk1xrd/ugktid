@@ -136,20 +136,40 @@ img { max-width: 100%; display: block; object-fit: cover; }
 
 .header-container { display: flex; justify-content: space-between; align-items: center; width: 100%; }
 
-.logo { display: flex; flex-direction: column; z-index: 1001; }
+.logo { 
+    display: flex; 
+    flex-direction: row; /* В ряд: Картинка слева, текст справа */
+    align-items: center; 
+    gap: 15px; 
+    z-index: 1001; 
+    text-decoration: none;
+    flex-shrink: 0; 
+}
+.logo-img {
+    height: 60px; /* Размер картинки */
+    width: auto;
+    object-fit: contain;
+}
+.logo-text-wrapper {
+    display: flex;
+    flex-direction: column; /* Текст внутри (аббревиатура + название) друг под другом */
+}
 .logo-abbr {
     font-family: var(--font-head);
     font-weight: 800;
-    font-size: 1.8rem;
-    color: var(--clr-accent); /* Красный логотип */
+    font-size: 1.6rem;
+    color: var(--clr-accent);
     line-height: 1;
+    letter-spacing: -0.5px;
 }
 .logo-full {
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     color: var(--clr-text-light);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    line-height: 1.2;
+    max-width: 250px;
 }
 
 .nav-list { display: flex; gap: 32px; }
@@ -191,7 +211,7 @@ img { max-width: 100%; display: block; object-fit: cover; }
 .hero {
     /* Темно-серый градиент (вместо синего) */
     background: linear-gradient(135deg, rgba(31, 41, 55, 0.95), rgba(17, 24, 39, 0.9)), 
-                url('https://placehold.co/1920x1080/1f2937/fff?text=UGKTID+College') center/cover no-repeat;
+                url('media/prof.jpg') center/cover no-repeat;
     background-attachment: scroll;
     color: var(--clr-white);
     padding: 140px 0 120px;
@@ -514,6 +534,17 @@ img { max-width: 100%; display: block; object-fit: cover; }
     .submenu.wide-menu li a::before { content: "•"; color: var(--clr-accent); font-size: 1.5rem; line-height: 0; margin-right: 10px; }
     
     .logo-full { display: none; }
+}
+
+@media (max-width: 1200px) {
+    .logo-full { display: none; } /* На планшетах скрываем длинный текст */
+    .logo-img { height: 50px; }
+}
+
+@media (max-width: 600px) {
+    .logo { gap: 10px; }
+    .logo-img { height: 45px; }
+    .logo-abbr { font-size: 1.4rem; }
 }
 
 /* --- Мобильные телефоны (max-width: 768px) --- */
