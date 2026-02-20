@@ -191,7 +191,7 @@ img { max-width: 100%; display: block; object-fit: cover; }
 .hero {
     /* Темно-серый градиент (вместо синего) */
     background: linear-gradient(135deg, rgba(31, 41, 55, 0.95), rgba(17, 24, 39, 0.9)), 
-                url('https://placehold.co/1920x1080/1f2937/fff?text=UGKTID+College') center/cover no-repeat;
+                url('prof.jpg') center/cover no-repeat;
     background-attachment: scroll;
     color: var(--clr-white);
     padding: 140px 0 120px;
